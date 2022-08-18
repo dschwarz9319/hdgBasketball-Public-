@@ -35,8 +35,8 @@ From there a browser window should pop up with the website homepage loaded in it
 ## Admin Features (CRUD Functionality)
 
 If you wish to test the `admin` side of the website, navigate to the website's URL, (likely localhost:3000 if you're running the app locally) and append `/admin/home` to that URL. You should see a menu with options to add or remove news, as well as add, remove, or update a team's standings. Each change you make in the admin portion of the website should immediately show up in the corresponding page of the UI.
-
 <br/>
+
 --------------------------------
 <br/>
 
