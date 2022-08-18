@@ -38,7 +38,6 @@ If you wish to test the `admin` side of the website, navigate to the website's U
 <br/>
 
 --------------------------------
-<br/>
 
 ### Desktop View
 <p align="center">
