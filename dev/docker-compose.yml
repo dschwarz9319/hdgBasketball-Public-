@@ -1,0 +1,37 @@
+version: "3.7"
+services:
+
+  hdg-bball:
+    build:
+      context: ../
+      dockerfile: ./dev/Dockerfile
+    volumes:
+      - ../:/app
+      - $GOPATH/pkg/mod:/go/pkg/mod
+    container_name: hdg-bball
+    restart: always
+    ports:
+      - 8000:8000
+    working_dir: /app
+    command: ["modd", "-f", "./dev/hdg-bball.conf"]
+    environment:
+      - GO111MODULE=on
+      - GO_TAGS=dev
+        # Uncomment to point to your local machine's MongoDB
+        # - MONGO_HOST=host.docker.internal
+    networks:
+      - hdg_net
+
+  mongo:
+    image: mongo:latest
+    container_name: hdg-mongo
+    environment: 
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=password
+    ports:
+      - 27017:27017
+    networks:
+      - hdg_net
+
+networks:
+  hdg_net:
